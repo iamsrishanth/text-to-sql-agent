@@ -15,15 +15,6 @@ model_llm = ChatOllama(base_url="http:localhost:11434", model= model_name)
 # Setup Database
 db = SQLDatabase.from_uri(database_name)
 
-
-
-
-
-
-
-
-
-
 ### Create tools
 
 @tool
@@ -95,11 +86,6 @@ def generate_response(question: str, sql_query: str, result: str) -> str:
 
     response = model_llm.invoke(prompt)
     return response.content.strip()
-
-
-
-
-
 ##### Create Nodes
 
 def list_tables_node(state: MessagesState):
